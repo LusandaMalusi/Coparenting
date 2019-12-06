@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="EqualRights.Views.CreateAccount">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="Sign Up"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,20,0,0"/>
+
+        <Entry Placeholder="Name"
+                Text="{Binding UserInfo.Name}"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   PlaceholderColor="Black"
+                   HorizontalTextAlignment="Start"/>
+
+        <Entry Placeholder="Surname"
+                Text="{Binding UserInfo.Surname}"
+                   Grid.Row="1"
+                    Grid.Column="1"
+                   PlaceholderColor="Black"
+                   HorizontalTextAlignment="Start"/>
+        
+        <Entry Placeholder="Username"
+               Text="{Binding UserInfo.Username}"
+                   Grid.Row="2"
+                   Grid.Column="0"
+                   PlaceholderColor="Black"
+                   HorizontalTextAlignment="Start"/>
+
+        <Entry Placeholder="Password"
+                Text="{Binding UserInfo.Password}"
+                   Grid.Row="2"
+                    Grid.Column="1"
+                   PlaceholderColor="Black"
+                   HorizontalTextAlignment="Start"/>
+        
+        <Entry Placeholder="Contacts"
+                Text="{Binding UserInfo.Contacts}"
+                   Grid.Row="3"
+                   Grid.Column="0"
+                   PlaceholderColor="Black"
+                   HorizontalTextAlignment="Start"/>
+
+        <Entry Placeholder="Email"
+                Text="{Binding UserInfo.Email}"
+                   Grid.Row="3"
+                    Grid.Column="1"
+                   PlaceholderColor="Black"
+                   HorizontalTextAlignment="Start"/> 
+        
+        <Button Text="Sign Up" Command="{Binding SignUpCommand}"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                     Margin="30"/>
+
+    </Grid>
+</ContentPage>
