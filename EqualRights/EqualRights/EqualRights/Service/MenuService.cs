@@ -65,11 +65,11 @@ namespace EqualRights.Service
             _allMenuItems = new List<DetailsItem>();
             var menuItem = new DetailsItem();
             menuItem.Id = 1;
-            menuItem.DetailsItemName = "Emergencies";
-            menuItem.NavigationPath = "NavigationPage/MenuPage";
+            menuItem.DetailsItemName = "Gallery";
+            menuItem.NavigationPath = "NavigationPage/GalleryPage";
             menuItem.MenuType = MenuItemEnum.UnSecured;
             menuItem.MenuOrder = 1;
-            menuItem.DetailsImageName = "PB.jpg";
+            menuItem.DetailsImageName = "Gal.jpg";
             _allMenuItems.Add(menuItem);
             menuItem = new DetailsItem();
             menuItem.Id = 2;
@@ -77,23 +77,32 @@ namespace EqualRights.Service
             menuItem.NavigationPath = "";
             menuItem.MenuOrder = 99;
             menuItem.MenuType = MenuItemEnum.LogOut;
-            menuItem.DetailsImageName = "logout.png";
+            menuItem.DetailsImageName = "Out.png";
             _allMenuItems.Add(menuItem);
             menuItem = new DetailsItem();
             menuItem.Id = 3;
-            menuItem.DetailsItemName = "Self Difense Tips ";
-            menuItem.NavigationPath = "NavigationPage/Coparenting";
+            menuItem.DetailsItemName = "Report submission ";
+            menuItem.NavigationPath = "NavigationPage/DetailsPage";
             menuItem.MenuOrder = 3;
             menuItem.MenuType = MenuItemEnum.UnSecured;
-            menuItem.DetailsImageName = "SD.png";
+            menuItem.DetailsImageName = "Docs.png";
             _allMenuItems.Add(menuItem);
+            menuItem = new DetailsItem();
+            menuItem.Id = 3;
+            menuItem.DetailsItemName = "Know your Rights";
+            menuItem.NavigationPath = "NavigationPage/AboutApp";
+            menuItem.MenuOrder = 3;
+            menuItem.MenuType = MenuItemEnum.UnSecured;
+            menuItem.DetailsImageName = "Question.png";
+            _allMenuItems.Add(menuItem);
+
             menuItem = new DetailsItem();
             menuItem.Id = 4;
             menuItem.DetailsItemName = "Profile";
             menuItem.NavigationPath = "NavigationPage/Profile";
             menuItem.MenuOrder = 4;
             menuItem.MenuType = MenuItemEnum.UnSecured;
-            menuItem.DetailsImageName = "P.png";
+            menuItem.DetailsImageName = "You.png";
             _allMenuItems.Add(menuItem);
         }
     }

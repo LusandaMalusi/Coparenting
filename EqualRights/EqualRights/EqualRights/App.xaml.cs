@@ -37,6 +37,7 @@ namespace EqualRights
         {
             containerRegistry.RegisterSingleton<IData, CoparentingDatabase>();
             containerRegistry.RegisterSingleton<IMenuService, MenuService>();
+          
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
@@ -44,6 +45,8 @@ namespace EqualRights
             containerRegistry.RegisterForNavigation<CreateAccount, CreateAccountViewModel>();
             containerRegistry.RegisterForNavigation<DetailsPage, DetailsPageViewModel>();
             containerRegistry.RegisterForNavigation<MasterD, MasterDViewModel>();
+            containerRegistry.RegisterForNavigation<AboutApp, AboutAppViewModel>();
+            containerRegistry.RegisterForNavigation<GalleryPage, GalleryPageViewModel>();
         }
     }
 }

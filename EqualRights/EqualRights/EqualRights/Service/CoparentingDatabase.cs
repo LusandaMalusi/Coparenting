@@ -46,7 +46,7 @@ namespace EqualRights.Service
         {
             return database.Table<User>().Where(i => i.ID == id).FirstOrDefaultAsync();
         }
-
+         
         public Task<int> SaveItemAsync(User item)
         {
             if (item.ID != 0)
