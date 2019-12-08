@@ -4,7 +4,73 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="EqualRights.Views.DetailsPage">
+
     <StackLayout>
-        <Label Text="welcome to details page"/>
+        <Label Text="Progress Report" FontSize="Large" TextColor="Black" HorizontalOptions="CenterAndExpand"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Entry Placeholder="Name"
+                Text="{Binding UserInfo.Name}"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   PlaceholderColor="Black"
+                   HorizontalTextAlignment="Start"/>
+
+            <Entry Placeholder="Surname"
+                Text="{Binding UserInfo.Surname}"
+                   Grid.Row="0"
+                    Grid.Column="1"
+                   PlaceholderColor="Black"
+                   HorizontalTextAlignment="Start"/>
+            <StackLayout  Grid.Row="1" Grid.Column="0">
+                <Label Text="DateVisit">
+
+                </Label>
+                <DatePicker
+            Date="{Binding UserInfo.DateVisit}"/>
+            </StackLayout>
+
+
+
+            <StackLayout Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="5">
+
+                <Label Text="Reviews"
+               FontSize="15"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+                <Editor VerticalOptions="FillAndExpand" Text="{Binding UserInfo.Reviews}">
+
+                </Editor>
+            </StackLayout>
+
+            <StackLayout  Grid.Row="1" Grid.Column="1">
+                <Label Text="Confirm Maintenance"/>
+                <Picker x:Name="Confirmmaintenance" SelectedItem="{Binding UserInfo.Maintanance}" 
+                    >
+                    <Picker.Items>
+                        <x:String>Yes</x:String>
+                        <x:String>No</x:String>
+                    </Picker.Items>
+
+                </Picker>
+            </StackLayout>
+        </Grid>
+
+        <Button VerticalOptions="EndAndExpand" Text="SUBMIT"  Command="{Binding SubmitCommand}"/>
     </StackLayout>
 </ContentPage>

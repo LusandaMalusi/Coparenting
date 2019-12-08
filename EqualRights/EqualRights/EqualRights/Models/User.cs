@@ -15,8 +15,9 @@ namespace EqualRights.Models
         public string Password { get; set; }
         public string Contacts { get; set; }
         public string Email { get; set; }
-      //  public string Maintenance { get; set; }
-        //public DateTime DateVisit { get; set; }
+        public string Maintanance { get; set; }
+        public string Reviews { get; set; }
+        public DateTime DateVisit { get; set; }
         public bool Posted { get; set; }
 
     }

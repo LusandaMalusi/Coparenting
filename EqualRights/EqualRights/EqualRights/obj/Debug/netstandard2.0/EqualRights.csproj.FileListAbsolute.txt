@@ -14,3 +14,4 @@ C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights\obj\Debug\netstandard
 C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights\obj\Debug\netstandard2.0\EqualRights.dll
 C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights\obj\Debug\netstandard2.0\EqualRights.pdb
+C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights\obj\Debug\netstandard2.0\EqualRights.csprojAssemblyReference.cache
