@@ -11,7 +11,6 @@ C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights\obj\Debug\netstandard
 C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights\obj\Debug\netstandard2.0\Views\MasterD.xaml.g.cs
 C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights\obj\Debug\netstandard2.0\EqualRights.AssemblyInfoInputs.cache
 C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights\obj\Debug\netstandard2.0\EqualRights.AssemblyInfo.cs
-C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights\obj\Debug\netstandard2.0\EqualRights.dll
 C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights\obj\Debug\netstandard2.0\EqualRights.pdb
-C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights\obj\Debug\netstandard2.0\EqualRights.csprojAssemblyReference.cache
+C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights\obj\Debug\netstandard2.0\XamlC.stamp

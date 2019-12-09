@@ -4,6 +4,9 @@ C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights.Android\obj\Debug\90\
 C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights.Android\obj\Debug\90\android\assets\Java.Interop.dll
 C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights.Android\obj\Debug\90\android\assets\Mono.Android.dll
 C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights.Android\obj\Debug\90\android\assets\mscorlib.dll
+C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights.Android\obj\Debug\90\android\assets\Plugin.CurrentActivity.dll
+C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights.Android\obj\Debug\90\android\assets\Plugin.Media.dll
+C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights.Android\obj\Debug\90\android\assets\Plugin.Permissions.dll
 C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights.Android\obj\Debug\90\android\assets\Prism.dll
 C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights.Android\obj\Debug\90\android\assets\Prism.Forms.dll
 C:\Xamarin\Coparenting\EqualRights\EqualRights\EqualRights.Android\obj\Debug\90\android\assets\Prism.Unity.Forms.dll

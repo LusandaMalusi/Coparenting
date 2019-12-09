@@ -78,7 +78,7 @@ namespace EqualRights.Service
             menuItem.DetailsItemName = "Logout";
             menuItem.NavigationPath = "NavigationPage/MainPage";
             menuItem.MenuOrder = 99;
-            menuItem.MenuType = MenuItemEnum.Secured;
+            menuItem.MenuType = MenuItemEnum.LogOut;
             menuItem.DetailsImageName = "Out.png";
             _allMenuItems.Add(menuItem);
             

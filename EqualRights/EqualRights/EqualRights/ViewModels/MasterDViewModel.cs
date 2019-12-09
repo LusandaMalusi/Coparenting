@@ -38,13 +38,17 @@ namespace EqualRights.ViewModels
             }
         }
 
+        public IList<DetailsItem> detailsItemsProperty;
 
         public MasterDViewModel(INavigationService navigationService, IMenuService menuService, IEventAggregator eventAggregator) : base(navigationService)
         {
             _menuService = menuService;
             _eventAggregator = eventAggregator;
+
             DetailsItems = new ObservableCollection<DetailsItem>(_menuService.GetAllowedAccessItems());
-            _eventAggregator.GetEvent<LogInMessage>().Subscribe(LoginEvent);
+
+            //_eventAggregator.GetEvent<LogInMessage>().Subscribe(LoginEvent);
+
             _eventAggregator.GetEvent<LogOutMessage>().Subscribe(LogOutEvent);
         }
         public void LoginEvent(UserProfile userProfile)
@@ -56,8 +60,9 @@ namespace EqualRights.ViewModels
         {
             DetailsItems = new ObservableCollection<DetailsItem>(_menuService.GetAllowedAccessItems());
             NavigationService.NavigateAsync("NavigationPage/MainPage");
+            //var userProfile = new UserProfile();
 
-
+            //_eventAggregator.GetEvent<LogOutMessage>().Publish(userProfile);
         }
     }
 }

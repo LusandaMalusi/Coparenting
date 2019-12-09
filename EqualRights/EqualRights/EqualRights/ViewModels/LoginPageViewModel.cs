@@ -1,6 +1,8 @@
-﻿using EqualRights.Models;
+﻿using EqualRights.Messages;
+using EqualRights.Models;
 using EqualRights.Service.Interface;
 using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Navigation.Xaml;
@@ -21,6 +23,9 @@ namespace EqualRights.ViewModels
             get { return _userInfo; }
             set { SetProperty(ref _userInfo, value); }
         }
+        public IMenuService _menuService;
+        private IEventAggregator _eventAggregator;
+
 
         private DelegateCommand _nextCommand;
         public DelegateCommand NextCommand =>
@@ -45,11 +50,14 @@ namespace EqualRights.ViewModels
 
 
 
-        public LoginPageViewModel(INavigationService navigationService, IData data, IPageDialogService pageDialogService) : base(navigationService)
+        public LoginPageViewModel(INavigationService navigationService, IData data, IMenuService menuService, IEventAggregator eventAggregator, IPageDialogService pageDialogService) : base(navigationService)
         {
             _data = data;
 
             _dialogService = pageDialogService;
+            _menuService = menuService;
+            _eventAggregator = eventAggregator;
+
         }
 
         public override void Initialize(INavigationParameters parameters)
@@ -65,10 +73,6 @@ namespace EqualRights.ViewModels
         {
 
             var knownUser = await _data.GetUserByUserName(UserInfo.Username);
-
-
-
-
             var Infor = UserInfo;
 
             if (knownUser is null)
@@ -87,25 +91,20 @@ namespace EqualRights.ViewModels
                 if (knownUser.Password == UserInfo.Password)
                 {
                     PasswExist = true;
-                    await NavigationService.NavigateAsync("DetailsPage");
+                    var loginResult = _menuService.LogIn("Test User", "Password");
+
+                    var userProfile = new UserProfile();
+                    if (loginResult)
+                    {
+                        _eventAggregator.GetEvent<LogInMessage>().Publish(userProfile);
+                    }
+
+                    await NavigationService.NavigateAsync("MasterD/NavigationPage/AboutApp", useModalNavigation: true);
                     return;
                 }
+
                 else
                     PasswExist = false;
-
-
-                /* for (int i = 0; i < CustomerDetails.Count; i++)
-                 {
-                     if (CustomerDetails[i].Password == Infor.Password)
-                     {
-                         PasswExist = true;
-                         await NavigationService.NavigateAsync("DetailsPage");
-                         return;
-                     }
-                     else
-                     {
-                         PasswExist = false;
-                     }*/
             }
 
             if (PasswExist == false)

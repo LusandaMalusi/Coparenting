@@ -4,5 +4,10 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="EqualRights.Views.GalleryPage">
-  
+
+    <StackLayout>
+        <Button Text="Pick Photo" Command="{Binding PickPhotoCommand}"/>
+        <Image HeightRequest="500" WidthRequest="500" Source="{Binding PickImage,Path= Stream}"/>
+    </StackLayout>
+
 </ContentPage>
