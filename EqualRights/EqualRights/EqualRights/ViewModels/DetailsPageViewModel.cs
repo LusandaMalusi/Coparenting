@@ -1,12 +1,15 @@
 ﻿using EqualRights.Models;
 using EqualRights.Service;
 using EqualRights.Service.Interface;
+using Newtonsoft.Json;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Text;
 
 namespace EqualRights.ViewModels
 {
@@ -28,6 +31,17 @@ namespace EqualRights.ViewModels
         {
             var conn = new CoparentingDatabase();
             await conn.SaveItemAsync(UserInfo);
+
+            var client = new HttpClient();
+            var url = "http://10.0.2.2:5000/Users";
+
+
+            UserInfo.ID = 0;
+
+            var json = JsonConvert.SerializeObject(UserInfo);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            await client.PostAsync(url, content);
             await NavigationService.NavigateAsync("MasterD/NavigationPage/GalleryPage", useModalNavigation: true);
         }
 

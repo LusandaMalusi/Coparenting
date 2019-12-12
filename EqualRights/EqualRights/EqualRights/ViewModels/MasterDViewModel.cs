@@ -18,6 +18,10 @@ namespace EqualRights.ViewModels
         private IEventAggregator _eventAggregator;
         private ObservableCollection<DetailsItem> _detailsItems;
         public ObservableCollection<DetailsItem> DetailsItems
+
+
+
+
         {
             get { return _detailsItems; }
             set { SetProperty(ref _detailsItems, value); }
@@ -54,7 +58,7 @@ namespace EqualRights.ViewModels
         public void LoginEvent(UserProfile userProfile)
         {
             DetailsItems = new ObservableCollection<DetailsItem>(_menuService.GetAllowedAccessItems());
-            NavigationService.NavigateAsync("NavigationPage/MenuPage");
+            NavigationService.NavigateAsync("NavigationPage/AboutApp");
         }
         public void LogOutEvent()
         {

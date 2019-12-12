@@ -70,47 +70,55 @@ namespace EqualRights.ViewModels
 
 
         private async void ExecuteNextCommand()
-        {
+         {
 
-            var knownUser = await _data.GetUserByUserName(UserInfo.Username);
-            var Infor = UserInfo;
+            try
+            {
+                var knownUser = await _data.GetUserByUserName(UserInfo.Username);
+                var Infor = UserInfo;
 
-            if (knownUser is null)
-                await _dialogService.DisplayAlertAsync("Alert", "Username unknown!", "ok");
-            else
-            if (Infor.Username == null)
-            {
-                await _dialogService.DisplayAlertAsync("Alert", "Username is required!", "ok");
-            }
-            else if (Infor.Password == null)
-            {
-                await _dialogService.DisplayAlertAsync("Alert", "Password is required!", "ok");
-            }
-            else
-            {
-                if (knownUser.Password == UserInfo.Password)
+                if (knownUser is null)
+                    await _dialogService.DisplayAlertAsync("Alert", "Username unknown!", "ok");
+                else
+                if (Infor.Username == null)
                 {
-                    PasswExist = true;
-                    var loginResult = _menuService.LogIn("Test User", "Password");
-
-                    var userProfile = new UserProfile();
-                    if (loginResult)
+                    await _dialogService.DisplayAlertAsync("Alert", "Username is required!", "ok");
+                }
+                else if (Infor.Password == null)
+                {
+                    await _dialogService.DisplayAlertAsync("Alert", "Password is required!", "ok");
+                }
+                else
+                {
+                    if (knownUser.Password == UserInfo.Password)
                     {
-                        _eventAggregator.GetEvent<LogInMessage>().Publish(userProfile);
+                        PasswExist = true;
+                        var loginResult = _menuService.LogIn("Test User", "Password");
+
+                        var userProfile = new UserProfile();
+                        if (loginResult)
+                        {
+                            _eventAggregator.GetEvent<LogInMessage>().Publish(userProfile);
+                        }
+
+                        await NavigationService.NavigateAsync("MasterD/NavigationPage/AboutApp", useModalNavigation: true);
+                        return;
                     }
 
-                    await NavigationService.NavigateAsync("MasterD/NavigationPage/AboutApp", useModalNavigation: true);
-                    return;
+                    else
+                        PasswExist = false;
                 }
 
-                else
-                    PasswExist = false;
+                if (PasswExist == false)
+                {
+                    await _dialogService.DisplayAlertAsync("Alert", "Incorrect Password Please try again", "ok");
+                }
             }
-
-            if (PasswExist == false)
+            catch (Exception ex)
             {
-                await _dialogService.DisplayAlertAsync("Alert", "Incorrect Password Please try again", "ok");
+                await _dialogService.DisplayAlertAsync("Opps", " Something is not right, check and try again", "ok");
             }
+           
         }
     }
 }
