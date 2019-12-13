@@ -47,6 +47,7 @@ namespace EqualRights
             containerRegistry.RegisterForNavigation<MasterD, MasterDViewModel>();
             containerRegistry.RegisterForNavigation<AboutApp, AboutAppViewModel>();
             containerRegistry.RegisterForNavigation<GalleryPage, GalleryPageViewModel>();
+            containerRegistry.RegisterForNavigation<Album, AlbumViewModel>();
         }
     }
 }

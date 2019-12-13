@@ -100,14 +100,14 @@ namespace EqualRights.Service
             menuItem.DetailsImageName = "Question.png";
             _allMenuItems.Add(menuItem);
             
-            //menuItem = new DetailsItem();
-           // menuItem.Id = 4;
-            //menuItem.DetailsItemName = "Profile";
-            //menuItem.NavigationPath = "NavigationPage/Profile";
-            //menuItem.MenuOrder = 4;
-            //menuItem.MenuType = MenuItemEnum.UnSecured;
-           // menuItem.DetailsImageName = "You.png";
-            //_allMenuItems.Add(menuItem);
+            menuItem = new DetailsItem();
+            menuItem.Id = 4;
+            menuItem.DetailsItemName = "LogIn";
+            menuItem.NavigationPath = "NavigationPage/LoginPage";
+            menuItem.MenuOrder = 2;
+            menuItem.MenuType = MenuItemEnum.UnSecured;
+            menuItem.DetailsImageName = "Out.png";
+            _allMenuItems.Add(menuItem);
         }
     }
 }

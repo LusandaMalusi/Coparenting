@@ -42,6 +42,8 @@ namespace EqualRights.ViewModels
 
             }
             else if (UserInfo.Surname == null)
+
+
             {
                 await _dialogService.DisplayAlertAsync("Alert", "Surname is required!", "ok");
             }
